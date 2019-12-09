@@ -5,6 +5,7 @@ var csscomb = require('gulp-csscomb');
 var rename = require('gulp-rename');
 var autoprefixer = require('gulp-autoprefixer');
 var pug = require('gulp-pug');
+var cssPrefix = require('gulp-css-prefix');
 
 var paths = {
   source: './src/*.scss',
@@ -62,6 +63,14 @@ gulp.task('docs', function() {
       pretty: true
     }))
     .pipe(gulp.dest('./docs/'));
+});
+
+gulp.task('prefix', function () {
+  gulp.src('./dist/*.css')
+    .pipe(cssPrefix({
+      parentClass: '_spectre'
+    }))
+    .pipe(gulp.dest('./dist_prefix'))
 });
 
 gulp.task('default', ['build']);

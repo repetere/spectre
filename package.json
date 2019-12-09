@@ -28,6 +28,7 @@
     "gulp-autoprefixer": "latest",
     "gulp-clean-css": "latest",
     "gulp-csscomb": "latest",
+    "gulp-css-prefix": "^0.1.0",
     "gulp-rename": "latest",
     "gulp-sass": "latest",
     "gulp-pug": "latest",
